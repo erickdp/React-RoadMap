@@ -11,6 +11,8 @@ const persona = {
 };
 
 console.log(persona);
+// se puede obtener el nombre del objeto con {}
+console.log({persona});
 // Obtener el nombre de la variable
 // console.table({ persona });
 

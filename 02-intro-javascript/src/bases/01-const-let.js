@@ -15,3 +15,5 @@ if (true) {
     let valorDado = 6;
     console.log(valorDado, nombre);
 }
+
+console.log(valorDado, nombre);
