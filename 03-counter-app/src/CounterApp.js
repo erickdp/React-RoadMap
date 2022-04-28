@@ -9,14 +9,21 @@ const CounterApp = ({ value }) => {
         // setCounter((c) => c + 1); dos formas de usar el counter
     }
 
+    const handleReset = () => setCounter(value);
 
-    const [counter, setCounter] = useState(0);
+    const handleSubstract = () => setCounter(counter - 1);
+
+
+    const [counter, setCounter] = useState(value);
 
     return (
         <>
             <h1>CounterApp</h1>
             <h2>{counter}</h2>
+
             <button onClick={handleAdd}>+1</button>
+            <button onClick={handleReset}>Reset</button>
+            <button onClick={handleSubstract}>-1</button>
         </>
     )
 }
@@ -26,7 +33,7 @@ CounterApp.propTypes = {
 }
 
 CounterApp.defaultProps = {
-    value: 2223
+    value: 10
 }
 
 export default CounterApp;
