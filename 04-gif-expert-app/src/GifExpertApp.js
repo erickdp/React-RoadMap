@@ -2,26 +2,25 @@
 
 import { useState } from "react";
 import AddCategory from "./components/AddCategory";
+import GifGrid from "./components/GifGrid";
 
 const GifExpertAPP = () => {
 
-    //  const categorias = ["One Punch", "Samurai X", "Dragaon Ball"];
-
-    const [categorias, setCategorias] = useState(["One Punch", "Samurai X", "Dragaon Ball"])
-
-    // const handleAdd = () => {
-    //     setCategorias([...categorias, "HunterXHunter"]); // primera solucion
-    //     // setCategorias(cats => [...cats, "HunterXHunter"]) // segunda solución toma el estado anterior con callback
-    // }
+    const [categorias, setCategorias] = useState(["BAKI"])
 
     return (
         <>
             <h2>GifExpertAPP</h2>
-            <AddCategory />
-            <hr/>
+            <AddCategory setCategorias={setCategorias} />
+            <hr />
 
             <ol>
-                {categorias.map(categoria => <li key={categoria}>{categoria}</li>)}
+                {categorias.map(categoria => (
+                    <GifGrid
+                        key={categoria}
+                        categoria={categoria}
+                    />
+                ))}
             </ol>
         </>
     )
